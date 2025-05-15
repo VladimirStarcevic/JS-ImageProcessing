@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Image Processing</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Image Processing Exercises</h1>
+    </header>
+
+    <main>
+        <section id="imageLoaderSection">
+            <h2>Load Image for Exercises</h2>
+            <p>Select an image to process:</p>
+            <input type="file" id="imageUploadInput" accept="image/*">
+            <canvas id="imageDisplayCanvas"></canvas>
+        </section>
+
+        <hr>
+
+        <section id="exerciseControlsSection">
+            <h2>Exercise Controls</h2>
+            <button id="turnChapelRedButton">Exercise 1: Turn Image Red</button>
+        </section>
+
+        <hr>
+
+        <section id="statusSection">
+            <p>Status/Output: <span id="statusOutput"></span></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Designed with <span class="mit-red">MIT</span> colors</p>
+    </footer>
+</div>
+
+<script src="lib/cs101/SimpleImage.js"></script>
+<script src="lib/cs101/cs101.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

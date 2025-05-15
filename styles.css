@@ -119,6 +119,15 @@ footer {
     font-weight: bold;
 }
 
+/* Exercise Controls */
+#exerciseControlsSection button {
+    width: 200px;
+    min-width: 200px;
+    margin: 5px;
+    display: inline-block;
+    text-align: center;
+}
+
 /* Status Section */
 #statusSection {
     background-color: #f8f8f8;

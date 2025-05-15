@@ -65,6 +65,40 @@ input[type="file"] {
     border-radius: 4px;
     width: 100%;
     max-width: 400px;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Custom styling for file input button */
+input[type="file"]::-webkit-file-upload-button {
+    background-color: #A31F34;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+    background-color: #8a1a2c;
+}
+
+/* For Firefox and other browsers */
+input[type="file"]::file-selector-button {
+    background-color: #A31F34;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background-color: #8a1a2c;
 }
 
 button {
@@ -86,6 +120,7 @@ button:hover {
 canvas {
     max-width: 100%;
     margin-top: 10px;
+    margin-left: 20px;
     border: 1px solid #ddd !important;
     border-radius: 4px;
 }

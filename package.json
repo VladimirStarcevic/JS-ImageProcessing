@@ -1,8 +1,9 @@
 {
   "name": "JS-ImageProcessing",
   "version": "1.0.0",
-  "description": "",
-  "main": "script.js",
+  "description": "JavaScript exercises focusing on loops, conditionals, and image manipulation using the SimpleImage library.", // Dodaj svoju deskripciju od ranije
+  "main": "js/main.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

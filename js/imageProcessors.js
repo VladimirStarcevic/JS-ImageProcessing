@@ -150,3 +150,70 @@ export function changeRedGradient(width, height) {
     }
     return picture
 }
+
+export function applyThreeStripes() {
+    if (!isImageReadyForProcessing()) {
+        return;
+    }
+    const currentImage = getCurrentImage();
+    let imageWidth = currentImage.getWidth();
+    let oneThirdWidth = imageWidth / 3;
+    let twoThirdsWidth = 2 * imageWidth / 3;
+
+    for (let pixel of currentImage.values()) {
+        let x = pixel.getX();
+        if (x < oneThirdWidth) {
+            pixel.setRed(255);
+        } else if (x < twoThirdsWidth) {
+            pixel.setGreen(255);
+        } else {
+            pixel.setBlue(255);
+        }
+    }
+
+    currentImage.drawTo(imageDisplayCanvas);
+    if (statusOutput) {
+        statusOutput.textContent = "Image processed: Three stripes added.";
+        console.log("Three stripes added.");
+    }
+}
+const swapRedGreen = (pixel) => {
+    let originalRed = pixel.getRed();
+    let originalGreen = pixel.getGreen();
+    pixel.setRed(originalGreen);
+    pixel.setGreen(originalRed);
+}
+
+export function processImageWithSwapRedGreen() {
+    if (!isImageReadyForProcessing()) {
+        return;
+    }
+    const currentImage = getCurrentImage();
+    for (let pixel of currentImage.values()) {
+        swapRedGreen(pixel);
+    }
+    currentImage.drawTo(imageDisplayCanvas);
+    if (statusOutput) {
+        statusOutput.textContent = "Image processed: Red and green channels swapped.";
+        console.log("Red and green channels swapped.");
+    }
+}
+
+export function devilToYellow() {
+    if (!isImageReadyForProcessing()) {
+        return;
+    }
+    const currentImage = getCurrentImage();
+    for (let pixel of currentImage.values()) {
+       if (pixel.getRed() < 100 && pixel.getBlue() > 200 && pixel.getGreen() < 100) {
+           pixel.setRed(255);
+           pixel.setGreen(255);
+           pixel.setBlue(0);
+       }
+    }
+    currentImage.drawTo(imageDisplayCanvas);
+    if (statusOutput) {
+        statusOutput.textContent = "Image Duke Devil to Yellow processed."
+        console.log("Duke Devil to Yellow processed.")
+    }
+}

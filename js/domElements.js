@@ -12,6 +12,9 @@ const addBlackBarButton = document.getElementById("addBlackBarButton");
 const addGreenSquareButton = document.getElementById("addGreenSquare");
 const topRightCornerButton = document.getElementById("topRightCornerButton");
 const changeRedGradientButton = document.getElementById("changeRedGradientButton");
+const threeStripesButton = document.getElementById("threeStripesButton");
+const swapRedGreenButton = document.getElementById("swapRedGreenButton");
+const devilToYellowButton = document.getElementById("devilToYellowButton");
 
 // Export DOM elements
 export {
@@ -24,5 +27,8 @@ export {
     addBlackBarButton,
     addGreenSquareButton,
     topRightCornerButton,
-    changeRedGradientButton
+    changeRedGradientButton,
+    threeStripesButton,
+    swapRedGreenButton,
+    devilToYellowButton
 };

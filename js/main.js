@@ -8,18 +8,24 @@ import {
     reduceRedButton,
     addBlackBarButton,
     addGreenSquareButton,
-    topRightCornerButton, imageDisplayCanvas, statusOutput, changeRedGradientButton
+    topRightCornerButton,
+    changeRedGradientButton,
+    threeStripesButton,
+    swapRedGreenButton,
+    devilToYellowButton,
+    imageDisplayCanvas,
+    statusOutput
 } from './domElements.js';
 
 import { loadImage } from './imageLoader.js';
-import { 
-    turnImageRed, 
-    removeRedChannel, 
-    reduceRedIntensity, 
-    addBlackBar, 
+import {
+    turnImageRed,
+    removeRedChannel,
+    reduceRedIntensity,
+    addBlackBar,
     addGreenSquare,
     getTopRightCorner,
-    changeRedGradient
+    changeRedGradient, applyThreeStripes, processImageWithSwapRedGreen, devilToYellow,
 } from './imageProcessors.js';
 import {isImageReadyForProcessing} from "./utils.js";
 import {getCurrentImage} from "./state.js";
@@ -88,6 +94,20 @@ if (changeRedGradientButton) {
             if (statusOutput) statusOutput.textContent = "Error: Could not display gradient image.";
         }
     });
+}
+
+if (threeStripesButton) {
+    threeStripesButton.addEventListener('click', applyThreeStripes);
+    console.log("Three stripes button added.");
+}
+
+if (swapRedGreenButton) {
+    swapRedGreenButton.addEventListener('click', processImageWithSwapRedGreen);
+    console.log("Swap red and green button added.");
+}
+
+if (devilToYellowButton) {
+    devilToYellowButton.addEventListener('click', devilToYellow);
 }
 
 console.log('Image processing application initialized');

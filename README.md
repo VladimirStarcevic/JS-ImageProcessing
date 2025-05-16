@@ -64,7 +64,7 @@ This project is a web application for practicing and demonstrating various image
         ```bash
         git clone https://github.com/VladimirStarcevic/JS-ImageProcessing.git 
         ```
-        *(Please ensure this is the correct URL for your public repository)*
+        
 2.  **Navigate to the Project Folder:**
     *   Open your file explorer or terminal and go into the `JS-ImageProcessing` folder.
 3.  **Open in Browser:**

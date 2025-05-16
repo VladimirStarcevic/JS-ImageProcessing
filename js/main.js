@@ -3,6 +3,8 @@
 
 import {
     imageUploadInput,
+    foregroundFileInput,
+    backgroundFileInput,
     turnImageRedButton,
     removeRedButton,
     reduceRedButton,
@@ -13,11 +15,15 @@ import {
     threeStripesButton,
     swapRedGreenButton,
     devilToYellowButton,
+    addBorderButton,
+    greenScreenButton,
     imageDisplayCanvas,
+    foregroundCanvasPreview,
+    backgroundCanvasPreview,
     statusOutput
 } from './domElements.js';
 
-import { loadImage } from './imageLoader.js';
+import { loadImage, loadForegroundImage, loadBackgroundImage } from './imageLoader.js';
 import {
     turnImageRed,
     removeRedChannel,
@@ -25,14 +31,23 @@ import {
     addBlackBar,
     addGreenSquare,
     getTopRightCorner,
-    changeRedGradient, applyThreeStripes, processImageWithSwapRedGreen, devilToYellow,
+    changeRedGradient, applyThreeStripes, processImageWithSwapRedGreen, devilToYellow, addBlackBorder, greenScreenEffect
 } from './imageProcessors.js';
 import {isImageReadyForProcessing} from "./utils.js";
-import {getCurrentImage} from "./state.js";
+import {getCurrentImage, getBackgroundImage, setForegroundImage} from "./state.js";
 
 // Set up event listeners
 if (imageUploadInput) {
     imageUploadInput.addEventListener('change', loadImage);
+}
+
+// Set up event listeners for foreground and background images
+if (foregroundFileInput) {
+    foregroundFileInput.addEventListener('change', loadForegroundImage);
+}
+
+if (backgroundFileInput) {
+    backgroundFileInput.addEventListener('change', loadBackgroundImage);
 }
 
 if (turnImageRedButton) {
@@ -108,6 +123,28 @@ if (swapRedGreenButton) {
 
 if (devilToYellowButton) {
     devilToYellowButton.addEventListener('click', devilToYellow);
+}
+
+if (addBorderButton) {
+    addBorderButton.addEventListener('click', () => {
+        if (isImageReadyForProcessing()) {
+            const currentImage = getCurrentImage();
+            const borderThickness = 10;
+            addBlackBorder(currentImage, borderThickness);
+            currentImage.drawTo(imageDisplayCanvas);
+            if (statusOutput) {
+                statusOutput.textContent = `Image processed: Black border added with thickness ${borderThickness}.`;
+            }
+            console.log("Black border added.");
+        }
+    });
+}
+
+if (greenScreenButton) {
+    greenScreenButton.addEventListener('click', () => {
+        greenScreenEffect();
+        console.log("Green screen button clicked.");
+    });
 }
 
 console.log('Image processing application initialized');

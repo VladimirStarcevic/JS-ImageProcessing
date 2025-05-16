@@ -1,5 +1,5 @@
-/* MIT-inspired Minimalistic Design */
-/* Colors: MIT Red (#A31F34), Black (#000000), White (#FFFFFF) */
+/* Duke University-inspired Design */
+/* Colors: Duke Blue (#001A57), White (#FFFFFF) */
 
 /* Global Styles */
 body {
@@ -20,13 +20,13 @@ body {
 /* Typography */
 h1, h2 {
     font-weight: 600;
-    color: #A31F34;
+    color: #001A57; /* Duke Blue */
     margin-top: 0;
 }
 
 h1 {
     font-size: 2.2rem;
-    border-bottom: 3px solid #A31F34;
+    border-bottom: 3px solid #001A57; /* Duke Blue */
     padding-bottom: 10px;
     margin-bottom: 30px;
 }
@@ -46,14 +46,14 @@ section {
     padding: 20px;
     background-color: #f8f8f8;
     border-radius: 4px;
-    border-left: 4px solid #A31F34;
+    border-left: 4px solid #001A57; /* Duke Blue */
 }
 
 /* Horizontal Rule */
 hr {
     border: none;
     height: 1px;
-    background-color: #A31F34;
+    background-color: #001A57; /* Duke Blue */
     margin: 30px 0;
 }
 
@@ -71,7 +71,7 @@ input[type="file"] {
 
 /* Custom styling for file input button */
 input[type="file"]::-webkit-file-upload-button {
-    background-color: #A31F34;
+    background-color: #001A57; /* Duke Blue */
     color: white;
     border: none;
     padding: 10px 15px;
@@ -82,12 +82,12 @@ input[type="file"]::-webkit-file-upload-button {
 }
 
 input[type="file"]::-webkit-file-upload-button:hover {
-    background-color: #8a1a2c;
+    background-color: #0033AA; /* Lighter Duke Blue */
 }
 
 /* For Firefox and other browsers */
 input[type="file"]::file-selector-button {
-    background-color: #A31F34;
+    background-color: #001A57; /* Duke Blue */
     color: white;
     border: none;
     padding: 10px 15px;
@@ -98,11 +98,11 @@ input[type="file"]::file-selector-button {
 }
 
 input[type="file"]::file-selector-button:hover {
-    background-color: #8a1a2c;
+    background-color: #0033AA; /* Lighter Duke Blue */
 }
 
 button {
-    background-color: #A31F34;
+    background-color: #001A57; /* Duke Blue */
     color: white;
     border: none;
     padding: 10px 15px;
@@ -113,7 +113,7 @@ button {
 }
 
 button:hover {
-    background-color: #8a1a2c;
+    background-color: #0033AA; /* Lighter Duke Blue */
 }
 
 /* Canvas */
@@ -128,7 +128,7 @@ canvas {
 /* Status Output */
 #statusOutput {
     font-weight: 500;
-    color: #A31F34;
+    color: #001A57; /* Duke Blue */
 }
 
 /* Header, Main, Footer */
@@ -143,14 +143,14 @@ main {
 footer {
     margin-top: 40px;
     padding-top: 20px;
-    border-top: 1px solid #A31F34;
+    border-top: 1px solid #001A57; /* Duke Blue */
     text-align: center;
     font-size: 0.9rem;
 }
 
-/* MIT Specific */
-.mit-red {
-    color: #A31F34;
+/* Duke Specific */
+.duke-blue {
+    color: #001A57; /* Duke Blue */
     font-weight: bold;
 }
 
@@ -168,7 +168,53 @@ footer {
     background-color: #f8f8f8;
     padding: 15px;
     border-radius: 4px;
-    border-left: 4px solid #A31F34;
+    border-left: 4px solid #001A57; /* Duke Blue */
+}
+
+/* Green Screen Section Styles */
+.green-screen-container {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    min-height: 350px;
+}
+
+.green-screen-inputs {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-around;
+    padding: 25px 0;
+    height: 100%;
+}
+
+.input-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.input-item label {
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.green-screen-canvases {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.green-screen-canvases canvas {
+    align-self: flex-start;
+    max-width: 100%;
+    height: auto;
+    margin-left: 0;
 }
 
 /* Responsive Adjustments */
@@ -188,5 +234,26 @@ footer {
     footer {
         margin-top: 30px;
         padding-top: 15px;
+    }
+
+    .green-screen-container {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .green-screen-inputs,
+    .green-screen-canvases {
+        width: 100%;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .input-item {
+        padding: 10px 0;
+    }
+
+    .green-screen-canvases canvas {
+        width: 100%;
+        max-width: 300px;
     }
 }

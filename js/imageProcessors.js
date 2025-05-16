@@ -1,9 +1,10 @@
 // Image Processors module
 // This module contains functions for processing images
 
-import { imageDisplayCanvas, statusOutput } from './domElements.js';
+import {foregroundCanvasPreview, backgroundCanvasPreview, imageDisplayCanvas, statusOutput} from './domElements.js';
 import { isImageReadyForProcessing } from './utils.js';
-import { getCurrentImage } from './state.js';
+import { getCurrentImage, getBackgroundImage, getForegroundImage } from './state.js';
+import { getSimpleImage } from './simpleImageWrapper.js';
 
 /**
  * Turns the image red by maximizing the red channel for all pixels
@@ -117,7 +118,7 @@ export function addGreenSquare() {
     }
 }
 
-export function getTopRightCorner(cornerWidth, cornerHeight, someImage, red, green, blue) {
+export function getTopRightCorner(cornerWidth, cornerHeight, red, green, blue) {
     if (!isImageReadyForProcessing()) {
         return;
     }
@@ -135,7 +136,7 @@ export function getTopRightCorner(cornerWidth, cornerHeight, someImage, red, gre
         }
     }
 
-   return someImage;
+   return currentImage;
 }
 
 export function changeRedGradient(width, height) {
@@ -215,5 +216,113 @@ export function devilToYellow() {
     if (statusOutput) {
         statusOutput.textContent = "Image Duke Devil to Yellow processed."
         console.log("Duke Devil to Yellow processed.")
+    }
+}
+
+const setBlack = (pixel) => {
+    pixel.setRed(0);
+    pixel.setBlue(0);
+    pixel.setGreen(0);
+}
+
+export function addBlackBorder(image, borderThickness) {
+    if (!isImageReadyForProcessing()) {
+        return;
+    }
+
+    let imageWidth = image.getWidth();
+    let imageHeight = image.getHeight();
+    for (let pixel of image.values()) {
+        let x = pixel.getX();
+        let y = pixel.getY();
+        if (x < borderThickness || x >= imageWidth - borderThickness || y < borderThickness || y >= imageHeight - borderThickness) {
+            setBlack(pixel);
+        }
+    }
+
+    return image
+}
+
+export function greenScreenEffect() {
+    let foregroundImage = getForegroundImage();
+    let backgroundImage = getBackgroundImage();
+
+    if (foregroundImage === null || backgroundImage === null) {
+        statusOutput.textContent = "Please load foreground and background images first.";
+        return;
+    }
+    if (foregroundImage.getWidth() !== backgroundImage.getWidth() ||
+        foregroundImage.getHeight() !== backgroundImage.getHeight()) {
+
+        console.log("Resizing background image to match foreground dimensions:",
+            foregroundImage.getWidth() + "x" + foregroundImage.getHeight());
+        if (statusOutput) statusOutput.textContent = "Resizing background image...";
+
+        backgroundImage.setSize(foregroundImage.getWidth(), foregroundImage.getHeight());
+
+
+        if (backgroundCanvasPreview) {
+            backgroundImage.drawTo(backgroundCanvasPreview);
+        }
+        console.log("Background image resized.");
+    }
+
+
+    foregroundImage.drawTo(foregroundCanvasPreview);
+    backgroundImage.drawTo(backgroundCanvasPreview);
+
+    if (foregroundCanvasPreview) {
+        foregroundCanvasPreview.style.display = 'block';
+    }
+    if (backgroundCanvasPreview) {
+        backgroundCanvasPreview.style.display = 'block';
+    }
+
+
+    const SimpleImage = getSimpleImage();
+
+
+    let outputImage = new SimpleImage(foregroundImage.getWidth(), foregroundImage.getHeight());
+
+
+    for (let pixel of foregroundImage.values()) {
+        let x = pixel.getX();
+        let y = pixel.getY();
+
+        // Uzmi piksel iz IZLAZNE slike na koju ćemo pisati
+        let outPixel = outputImage.getPixel(x, y);
+
+        // Uslov za detekciju zelene boje na prednjoj slici
+        if (pixel.getGreen() > (pixel.getRed() + pixel.getBlue())) {
+            // Piksel je "zelen", treba uzeti piksel sa pozadinske slike
+
+            // ---- KLJUČNA PROVERA GRANICA ZA POZADINSKU SLIKU KORISTEĆI x I y ----
+            if (x < backgroundImage.getWidth() && y < backgroundImage.getHeight()) {
+                let bgImagePixel = backgroundImage.getPixel(x, y); // Koristimo x i y
+                outPixel.setAllFrom(bgImagePixel); // Postavi boju iz pozadinskog piksela
+            } else {
+                // Piksel (x,y) je van granica pozadinske slike.
+                // Odluka: šta uraditi ovde? Postaviti crni piksel.
+                outPixel.setRed(0);
+                outPixel.setGreen(0);
+                outPixel.setBlue(0);
+            }
+        } else {
+            // Piksel nije "zelen", zadrži originalni piksel sa prednje slike
+            outPixel.setAllFrom(pixel);
+        }
+    }
+
+    // Draw the output image to the foreground canvas
+    outputImage.drawTo(foregroundCanvasPreview);
+
+    // Hide the background canvas
+    if (backgroundCanvasPreview) {
+        backgroundCanvasPreview.style.display = 'none';
+    }
+
+    if (statusOutput) {
+        statusOutput.textContent = "Green screen effect applied.";
+        console.log("Green screen effect applied.");
     }
 }

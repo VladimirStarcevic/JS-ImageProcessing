@@ -1,45 +1,57 @@
 # JS Image Processing Exercises
 
-This project is a collection of JavaScript exercises. It helps practice how to change images using code. The exercises focus on using loops, conditional statements (if/else), and the SimpleImage library from Duke University. You can load your own images and apply different effects to them.
+This project is a web application for practicing and demonstrating various image manipulation techniques using JavaScript. It's built upon exercises from Duke University's "Programming Foundations with JavaScript, HTML and CSS" course. Users can upload their own images and apply a range of filters and effects, including a green screen feature. The application interface is styled with Duke University's signature blue and white colors.
 
 ## Technologies Used
 
 *   HTML5
-*   CSS3
-*   JavaScript (using ES6 Modules for organization)
-*   `SimpleImage.js` and `cs101.js` (special libraries from Duke University for image processing)
+*   CSS3 (Styled with a Duke University-inspired color palette)
+*   JavaScript (Utilizing ES6 Modules for code organization)
+*   `SimpleImage.js` and `cs101.js` (Duke University libraries for simplified image processing)
 
 ## Main Features
 
-*   **Load Images:** You can choose an image from your computer to work with.
-*   **Image Display:** The selected image is shown on a canvas element.
-*   **Various Image Filters and Modifications:**
-    *   **Turn Image Red:** Makes the red color in every pixel as strong as possible.
-    *   **Remove Red:** Removes all red color from the image.
-    *   **Reduce Bright Reds:** Lowers the intensity of very bright red colors.
-    *   **Add Black Bar:** Puts a black bar at the bottom of the image.
-    *   **Add Green Square:** Draws a green square in the top-left corner of the image.
-    *   **Top-Right Rectangle:** Lets you draw a rectangle of any color and size in the top-right corner (example in code uses a yellow rectangle).
-    *   **Red Gradient:** Creates a new image showing a smooth change from black to red.
-    *   **Three Vertical Stripes:** Divides the image into three vertical parts. The left part gets more red, the middle part more green, and the right part more blue.
-    *   **Swap Red & Green:** Swaps the red and green color values for every pixel.
-    *   **Devil to Yellow:** Changes specific blue parts of an image (like the Duke Blue Devil logo) to yellow.
-*   **Organized Code:** The JavaScript code is organized into modules for better structure.
-*   **User Interface:** The page has a clear layout with buttons to try each effect.
+*   **Flexible Image Loading:**
+    *   Load a single image for most filter applications.
+    *   Dedicated interface to load separate foreground (with green background) and background images for the green screen effect.
+*   **Live Image Previews:** Loaded images for green screen are displayed on preview canvases.
+*   **Canvas-Based Image Display:** All processed images are rendered onto HTML5 canvas elements.
+*   **Variety of Image Filters and Modifications:**
+    *   **Turn Image Red:** Maximizes the red channel of every pixel.
+    *   **Remove Red:** Sets the red channel of every pixel to 0.
+    *   **Reduce Bright Reds:** Caps the red channel intensity at a specific value (e.g., 70).
+    *   **Add Black Bar:** Adds a 10-pixel thick black bar to the bottom of the image.
+    *   **Add Green Square:** Draws a 50x50 green square in the top-left corner.
+    *   **Top-Right Rectangle:** Allows drawing a custom-colored rectangle of specified dimensions in the top-right corner.
+    *   **Red Gradient:** Generates a new image displaying a horizontal red gradient.
+    *   **Three Vertical Stripes:** Applies red, green, and blue dominant stripes to the left, middle, and right thirds of the image, respectively.
+    *   **Swap Red & Green:** Swaps the red and green color channel values for every pixel.
+    *   **Devil to Yellow:** Transforms a "Duke blue" colored subject (like the Blue Devil mascot) to yellow.
+    *   **Add Border:** Adds a black border of a specified thickness around the image.
+    *   **Green Screen Effect:** Replaces the green background of a foreground image with a background image of the user's choice.
+*   **Modular JavaScript Code:** Well-organized code structure with ES6 modules separating concerns (DOM elements, state management, image processing logic, utility functions, and event handling).
+*   **User-Friendly Interface:** A clean and intuitive layout with clearly labeled controls for each image processing task.
 
 ## Screenshots
 
-Here is what the application looks like:
-
-**Main Application View (after loading an image):**
+**Main Application View (showing Duke-inspired colors and image loading):**
 ![Main application view with a loaded image](./screenshots/main_view.png)
+
+**Green Screen Setup Interface (loading foreground and background images):**
+![Green Screen setup with foreground and background image previews](./screenshots/green_screen_setup.png)
+
+**Example of "Green Screen" Effect - Before:**
+![Original foreground image for green screen](./screenshots/before.png)
+
+**Example of "Green Screen" Effect - After:**
+![Image after applying the green screen effect](./screenshots/after.png)
 
 **Example of the "Three Vertical Stripes" Filter:**
 ![Result of applying the Three Vertical Stripes filter](./screenshots/three_stripes_effect.png)
 
 **Example of the "Devil to Yellow" Transformation:**
 *Original Image:*
-![Original Duke Blue Devil image](./screenshots/devil_original.png)
+![Original Duke Blue Devil image](./screenshots/devil_org.png)
 
 *Image After "Devil to Yellow" Filter:*
 ![Duke Blue Devil image transformed to yellow](./screenshots/devil_yellow.png)
@@ -47,17 +59,18 @@ Here is what the application looks like:
 ## How to Use
 
 1.  **Get the Code:**
-    *   You can download the project files.
-    *   Or, if you have Git, clone the repository: 
+    *   You can download the project files as a ZIP.
+    *   Or, if you have Git installed, clone the repository:
         ```bash
-        git clone https://github.com/VladimirStarcevic/JS-ImageProcessing.git
+        git clone https://github.com/VladimirStarcevic/JS-ImageProcessing.git 
         ```
-2.  **Go to the Project Folder:**
+        *(Please ensure this is the correct URL for your public repository)*
+2.  **Navigate to the Project Folder:**
     *   Open your file explorer or terminal and go into the `JS-ImageProcessing` folder.
 3.  **Open in Browser:**
-    *   Find the `index.html` file and open it with your favorite web browser (like Chrome, Firefox, etc.).
+    *   Find the `index.html` file and open it with your web browser (e.g., Chrome, Firefox, Edge).
 
-Now you can load images and try out the different processing effects!
+You can now load images and experiment with the various image processing features!
 
 ---
-*This project includes exercises from a Coursera course by Duke University ("Programming Foundations with JavaScript, HTML and CSS").*
+*This project is based on and extends exercises from the Coursera course "Programming Foundations with JavaScript, HTML and CSS" by Duke University. The SimpleImage library provided by Duke University is used for image manipulation tasks.*

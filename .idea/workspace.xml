@@ -6,10 +6,37 @@
   <component name="ChangeListManager">
     <list default="true" id="f98b1748-6fe6-49b6-8395-05feba225c36" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/astrachan.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/chapel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/dinos.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/drewRobert.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/drewRobertDinos.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/drewRobertOrig.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/drewgreen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/duke_blue_devil.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/eastereggs.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/hilton.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/lion.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/nyc-skyline.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/palm-and-beach.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/skyline.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/smallhands.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/smallpanda.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/smalluniverse.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/universe.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/usain.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/domElements.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/domElements.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/imageLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/imageLoader.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/imageProcessors.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/imageProcessors.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/state.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/state.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/devil_original.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/devil_yellow.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/devil_yellow.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/main_view.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/main_view.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/three_stripes_effect.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/three_stripes_effect.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +90,8 @@
       <updated>1747294496762</updated>
       <workItem from="1747294497800" duration="9500000" />
       <workItem from="1747310897104" duration="15713000" />
-      <workItem from="1747346257497" duration="4355000" />
+      <workItem from="1747346257497" duration="9366000" />
+      <workItem from="1747397728817" duration="20108000" />
     </task>
     <servers />
   </component>

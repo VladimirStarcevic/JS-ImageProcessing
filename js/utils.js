@@ -1,8 +1,8 @@
 // Utils module
 // This module provides utility functions for the application
 
-import { imageDisplayCanvas, statusOutput } from './domElements.js';
-import { getCurrentImage } from './state.js';
+import { imageDisplayCanvas, foregroundCanvasPreview, backgroundCanvasPreview, statusOutput } from './domElements.js';
+import { getCurrentImage, getBackgroundImage, getForegroundImage } from './state.js';
 
 /**
  * Checks if an image is loaded and ready for processing

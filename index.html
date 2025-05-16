@@ -21,6 +21,28 @@
         </section>
 
         <hr>
+        <section id="greenScreenLoaderSection">
+            <h2>Green Screen Setup</h2>
+            <div class="green-screen-container">
+                <div class="green-screen-inputs">
+                    <div class="input-item">
+                        <label for="foregroundFileInput">Foreground Image (with green screen):</label>
+                        <input type="file" id="foregroundFileInput" accept="image/*">
+                    </div>
+                    <div class="input-item">
+                        <label for="backgroundFileInput">Background Image:</label>
+                        <input type="file" id="backgroundFileInput" accept="image/*">
+                    </div>
+                </div>
+                <div class="green-screen-canvases">
+                    <canvas id="foregroundCanvasPreview" width="200" height="150"></canvas>
+                    <canvas id="backgroundCanvasPreview" width="200" height="150"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
 
         <section id="exerciseControlsSection">
             <h2>Edite Images Controls</h2>
@@ -34,6 +56,8 @@
             <button id="threeStripesButton">Three Vertical Stripes</button>
             <button id="swapRedGreenButton">Swap Red & Green</button>
             <button id="devilToYellowButton">Devil to Yellow</button>
+            <button id="addBorderButton">Add Border</button>
+            <button id="greenScreenButton">Green Screen</button>
         </section>
 
         <hr>
@@ -44,7 +68,7 @@
     </main>
 
     <footer>
-        <p>Designed with <span class="mit-red">MIT</span> colors</p>
+        <p>Designed with <span class="duke-blue">Duke University</span> colors</p>
     </footer>
 </div>
 

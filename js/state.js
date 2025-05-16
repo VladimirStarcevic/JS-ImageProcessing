@@ -3,7 +3,9 @@
 
 // Application state
 let state = {
-    currentImage: null
+    currentImage: null,
+    foregroundImage: null,
+    backgroundImage: null
 };
 
 /**
@@ -23,4 +25,20 @@ export function setCurrentImage(image) {
     state.currentImage = image;
     // Also set it on window for backward compatibility with existing code
     window.currentImage = image;
+}
+
+export function getForegroundImage() {
+    return state.foregroundImage;
+}
+
+export function setForegroundImage(image) {
+    state.foregroundImage = image;
+}
+
+export function getBackgroundImage() {
+    return state.backgroundImage;
+}
+
+export function setBackgroundImage(image) {
+    state.backgroundImage = image;
 }
